@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '927=_6=q(98wdizu#6%@3b+#_cxon=3=zsx4o6%aq*3kxx$tbv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["save-a-life.raselsplanet.com","www.save-a-life.raselsplanet.com"]
 
 
 # Application definition
@@ -81,8 +81,10 @@ WSGI_APPLICATION = 'blood_bank.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'donor_data_basu',
+        'USER':'donor_appori',
+        'PASSWORD':'~!@#$%^&*()_+'
     }
 }
 
@@ -124,13 +126,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn","static_root")
+STATIC_ROOT='/home/timesbd/webapps/save_a_life_static_root/'
 
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR,"static"),
 )
 
 MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn","media_root")
+MEDIA_ROOT='/home/timesbd/webapps/save_a_life_media_root/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

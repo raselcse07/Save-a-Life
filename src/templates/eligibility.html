@@ -10,6 +10,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="{% static "main.css" %}">
+  <link rel='icon' href='{% static "favicon.ico" %}' type='image/x-icon'/ >
   <title>Save a Life | Donation Eligibility</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
       <h3 align="center" id="caps">DONATION ELIGIBILITY</h3>
       <section class="search-sec-table">
           <div class="container" id="about">
-                <a href="{% url "home" %}"><img src="{% static "logo2.png" %}" alt=""  class="float-left"></a>
+                <a href="{% url "home" %}"><img src="{% static "logo2.png" %}" alt=""  class="float-left" width="45%"></a>
                 <h2>What is "Save a Life" ?</h2>
                 <p><strong>Save a Life</strong> is a non-profit blood donation system where anyone can register as a blood donor. Anyone who needs blood, can search blood group to his location. No need to sign in/sign up. </p>
                 <h2>Who can donate blood ?</h2>
@@ -80,5 +81,6 @@
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1" style="color:red;">&copy; 2019 <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasels Planet</a>. All rights reserved | Developed By <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasel Miah</a> </p>
 </footer>
+{% include "footer-js.html" %}
 </body>
 </html>
