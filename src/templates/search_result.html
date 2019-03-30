@@ -1,0 +1,72 @@
+{% load static %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static "main.css" %}">
+  <title>Save a Life | Donor List</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url "home" %}" style="color:red;"><img src="{% static "logo2.png" %}" alt="" width="150" height="50" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% include "nav-bar.html" %}
+    </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" id="main">
+      <h3 align="center" id="caps">
+        DONOR LIST 
+        </h3>
+      <section class="search-sec-table">
+          <div class="container">
+            {% if result is None %}
+                <p>You haven't search yet</p>
+                <br>
+            {% else %}
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Blood Group</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for ob in result %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ ob.name }}</td>
+                        <td>{{ ob.blood_group|uppercase }}</td>
+                        <td>{{ ob.mobile_number_1 }} , {{ ob.mobile_number_2 }}</td>
+                        <td>{{ ob.address }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            {% endif %}
+          </div>
+      </section>
+    </div>
+  </div>
+</div>
+    
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1" style="color:red;">&copy; 2019 <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasels Planet</a>. All rights reserved | Developed By <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasel Miah</a> </p>
+</footer>
+</body>
+</html>

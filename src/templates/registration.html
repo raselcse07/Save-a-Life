@@ -1,0 +1,55 @@
+{% load static %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static "main.css" %}">
+  <title>Save a Life | Registration</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url "home" %}" style="color:red;"><img src="{% static "logo2.png" %}" alt="" width="150" height="50" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          {% include "nav-bar.html" %}
+    </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 align="center" id="caps">BECOME A DONOR</h3> 
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{% static "krv.jpg" %}" alt="" width="100%" height="70%">
+              </div>
+            <div class="col-sm-8">
+                <h4>Before registration, please read the <a href="{% url "about" %}" target="_blank">eligibility</a> to become a donor.</h4>
+                <form method="POST" id="personForm" data-cities-url="{% url 'ajax_load_ps' %}"  novalidate>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <input type="submit" class="btn btn-success" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+    
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1" style="color:red;">&copy; 2019 <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasels Planet</a>. All rights reserved | Developed By <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasel Miah</a> </p>
+</footer>
+{% include "footer-js.html" %}
+</body>
+</html>

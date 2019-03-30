@@ -1,0 +1,84 @@
+{% load static %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static "main.css" %}">
+  <title>Save a Life | Donation Eligibility</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url "home" %}" style="color:red;"><img src="{% static "logo2.png" %}" alt="" width="150" height="50" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% include "nav-bar.html" %}
+    </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" id="main">
+      <h3 align="center" id="caps">DONATION ELIGIBILITY</h3>
+      <section class="search-sec-table">
+          <div class="container" id="about">
+                <a href="{% url "home" %}"><img src="{% static "logo2.png" %}" alt=""  class="float-left"></a>
+                <h2>What is "Save a Life" ?</h2>
+                <p><strong>Save a Life</strong> is a non-profit blood donation system where anyone can register as a blood donor. Anyone who needs blood, can search blood group to his location. No need to sign in/sign up. </p>
+                <h2>Who can donate blood ?</h2>
+                <p>To donate blood,you must be in good general health, weigh at least 110 pounds, and be at least 16 years old.Good health means that you feel well and are able to carry out normal daily activities. If you have a chronic medical condition such as diabetes or high blood pressure, you may still be eligible as long as you are receiving treatment to control your condition.</p>
+                <p><strong>Age:</strong> You must be at least 17 years old to donate to the general blood supply. There is no upper age limit for blood donation as long as you are well with no restrictions or limitations to your activities.</p> 
+                <p><strong>High Blood Pressure:</strong> Acceptable as long as your blood pressure is below 180 systolic (first number) and below 100 diastolic (second number) at the time of donation. Medications for high blood pressure do not disqualify you from donating.</p> 
+                <p><strong>Body Piercing:</strong> You must not donate if you have had a tongue, nose, belly button or genital piercing in the past 12 months (donors with pierced ears are eligible).</p>
+                <p><strong>Cold and Flu</strong>: Wait if you have a fever or a productive cough (bringing up phlegm). Wait if you do not feel well on the day of donation. Wait until you have completed antibiotic treatment for sinus, throat or lung infection.</p> 
+                <img src="{% static "img1.png" %}" alt=""  class="float-right" width="50%">
+                <p><strong>Diabetes:</strong> Acceptable as long as it is well controlled, whether medication is taken or not.</p>
+                <p><strong>Diet:</strong> A meal is recommended at least four hours prior to donation. Drink plenty of fluids.</p>
+                <p><strong>MSM:</strong> Men who have had sex with other men, at any time since 1977 (the beginning of the AIDS epidemic in the United States) are currently deferred as blood donors. This is because MSM are, as a group, at increased risk for HIV, hepatitis B and certain other infections that can be transmitted by transfusion.</p>
+                <p><strong>Tattoos:</strong> One-year deferral.</p>
+                <p><strong>Travel:</strong> Please refer to <a href="https://www.cdc.gov/malaria/blood_banks.html">Centers for Disease Control and Prevention</a>. If you need further assistance please call UCSF Blood Center (415) 353-1809.</p>
+                <p><strong>Weight:</strong> You must weigh at least 110 pounds to be eligible for blood donation for your own safety. Blood volume is in proportion to body weight. Donors who weigh less than 110 pounds may not tolerate the removal of the required volume of blood as well as those who weigh more than 110 pounds. There is no upper weight limit as long as your weight is not higher than the weight limit of the donor bed or lounge you are using. You can discuss any upper weight limitations of beds and lounges with your local health historian.</p> 
+
+                <p>Other criteria that will be assessed at the time of donation such as (list is not all inclusive):</p>
+
+                <p>Hemoglobin, Travel, Cancer, Medications, Hepatitis, and HIV Risk:</p>
+
+                <p><ul id="bullet"><li>Intravenous drug abusers: HIV, HBV, HCV and HTLV</li>
+                <li>Transplant patients: animal tissue or organs</li>
+                <li>People who have recently traveled to or lived abroad in certain countries may be excluded because they are at risk for transmitting agents such as malaria or variant Creutzfeldt-Jakob Disease (vCJD).</li></ul></p>
+
+                <p>&nbsp;</p><p>Reviewed by health care specialists at UCSF Medical Center.</p>
+
+                <p><strong>This information is for educational purposes only and is not intended to replace the advice of your doctor or health care provider.  We encourage you to discuss with your doctor any questions or concerns you may have</strong>.</p>
+
+                <h2>What Conditions Would Make You Ineligible to Be a Donor?</h2>
+                <p>You will not be eligible to donate blood or platelets if you:</p>
+                <img src="{% static "img2.jpg" %}" alt=""  class="float-right" width="50%">
+                <ul>
+                    <li >Have tested positive for hepatitis B or hepatitis C, lived with or had sexual contact in the past 12 months with anyone who has hepatitis B or symptomatic hepatitis C.</li>
+                    <li>Had a tattoo in the past 12 months or received a blood transfusion (except with your own blood) in the past 12 months.</li>
+                    <li>Have ever had a positive test for the AIDS virus.</li>
+                    <li>Are a man who has had sex with another man in the past 12 months.</li>
+                    <li>Have ever used intravenous illegal drugs, even once.</li>
+                    <li>Have ever used injectable drugs, including anabolic steroids, unless prescribed by a physician.</li>
+                    <li>Have engaged in prostitution since 1977.</li>
+                    <li>Have traveled in the past year, or lived in the past three years, in an area where malaria is endemic.</li>
+          </div>
+      </section>
+    </div>
+  </div>
+</div>
+    
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1" style="color:red;">&copy; 2019 <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasels Planet</a>. All rights reserved | Developed By <a href="http://raselsplanet.com/" target="_blank" style="color:red;">Rasel Miah</a> </p>
+</footer>
+</body>
+</html>
